@@ -1,0 +1,30 @@
+@import "../Common/colors.scss";
+@import "../Common/effects.scss";
+
+.login-appbar {
+  margin-top: 15px;
+
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  .logo-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    margin: 0 20px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    span {
+      font-size: 36px;
+      font-weight: 600;
+      font-family: "Roboto";
+      color: $textMainColor2;
+    }
+  }
+}

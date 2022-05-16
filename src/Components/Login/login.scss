@@ -1,0 +1,33 @@
+@import "../Common/effects.scss";
+@import "../Common/colors.scss";
+
+.login-div {
+  height: 100vh;
+  @include align(flex, space-between, center, column);
+  .login-box {
+    @include align(flex, center, center, $flex-direction: column);
+    height: 300px;
+    width: 550px;
+    margin: 25px;
+    background-color: $mainColor;
+    @include nemo;
+    .re-otp {
+      width: 350px;
+      @include align(flex, flex-end, center);
+      color: $iconAndTextColor;
+      font-weight: 400;
+      font-family: "Roboto";
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: rgb(95, 95, 95);
+      }
+    }
+  }
+  .login-footer {
+    margin: 10px;
+    color: $textMainColor2;
+  }
+}

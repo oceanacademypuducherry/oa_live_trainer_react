@@ -1,0 +1,22 @@
+@import "../colors.scss";
+@import "../effects.scss";
+
+.inp-div {
+  @include align();
+  @include fitObject(50px, 350px);
+  background-color: $inputUnFocus;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 0 10px;
+  transition: 0.3s;
+  input {
+    @include inputEffect;
+  }
+}
+.inp-div:focus-within {
+  @include nemo;
+  background: $mainColor;
+  input {
+    color: $inputTextColor;
+  }
+}

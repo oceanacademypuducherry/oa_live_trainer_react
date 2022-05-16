@@ -1,0 +1,24 @@
+@import "../colors.scss";
+@import "../effects.scss";
+
+.c-btn {
+  @include fitObject(50px, 350px);
+  border: none;
+  outline: none;
+  background-color: $buttonMainColor;
+  color: $mainColor;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-weight: 600;
+  font-family: "Inter";
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: $buttonHoverColor;
+  }
+  &:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+  }
+}

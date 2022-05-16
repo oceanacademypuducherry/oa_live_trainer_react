@@ -1,0 +1,36 @@
+@mixin nemo {
+  box-shadow: -5px -5px 11px #fffffffe, 5px 5px 10px #0000002d;
+  border-radius: 10px;
+}
+
+@mixin innerNemo {
+  box-shadow: -5px -5px 11px #fffffffe inset, 5px 5px 10px #0000002d inset;
+  border-radius: 10px;
+}
+
+@mixin align(
+  $display: flex,
+  $justify-content: "center",
+  $align-items: "center",
+  $flex-direction: "row"
+) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
+
+@mixin fitObject($height: 100%, $width: 100%) {
+  height: $height;
+  width: $width;
+}
+
+@mixin inputEffect() {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Roboto";
+  outline: none;
+  border: none;
+  @include fitObject;
+  background: transparent;
+}
