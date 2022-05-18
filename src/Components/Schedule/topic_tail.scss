@@ -1,0 +1,72 @@
+@import "../Common/colors.scss";
+@import "../Common/effects.scss";
+.tp-div {
+  margin-top: 15px;
+  height: 65px;
+  width: 90%;
+  background: $mainColor;
+  @include nemo;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  &:active {
+    @include clickEvent;
+  }
+  .title {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .indicator {
+      min-width: 30px;
+      min-height: 30px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: rgba(128, 128, 128, 0.398);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .c-i {
+        display: inline-block;
+        min-width: 15px;
+        min-height: 15px;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+
+        background-color: gray;
+      }
+    }
+    .i-active {
+      background-color: $indicatorColor;
+      .c-i {
+        background-color: $successTextColor;
+      }
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+  .resedule-btn {
+    user-select: none;
+    cursor: pointer;
+    margin-right: 15px;
+    height: 35px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #33a9ee61;
+    color: #33a9ee;
+    &:active {
+      @include clickEvent;
+    }
+  }
+}
+.tp-completed {
+  @include innerNemo;
+}

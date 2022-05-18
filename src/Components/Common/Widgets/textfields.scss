@@ -4,6 +4,7 @@
 .inp-div {
   @include align();
   @include fitObject(50px, 350px);
+  min-height: 50px;
   background-color: $inputUnFocus;
   margin: 10px;
   border-radius: 5px;
@@ -18,5 +19,11 @@
   background: $mainColor;
   input {
     color: $inputTextColor;
+  }
+}
+
+@media (max-width: 550px) {
+  .inp-div {
+    @include fitObject(50px, 90%);
   }
 }

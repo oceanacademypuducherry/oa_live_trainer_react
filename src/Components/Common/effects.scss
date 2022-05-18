@@ -34,3 +34,7 @@
   @include fitObject;
   background: transparent;
 }
+@mixin clickEvent {
+  transition: 0.1s;
+  transform: scale(0.95);
+}

@@ -1,0 +1,181 @@
+@import "../Common/colors.scss";
+@import "../Common/effects.scss";
+
+.shcedule-div {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner-box {
+    height: 90%;
+    width: 90%;
+    background: $mainColor;
+    @include nemo;
+    display: flex;
+    justify-content: space-around;
+
+    align-items: flex-end;
+    .info-div {
+      margin: 20px;
+      width: 40%;
+      height: 84%;
+      background: $mainColor;
+      @include innerNemo;
+    }
+    .topic-div {
+      margin: 20px;
+      height: 95%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      //   border: 2px solid gray;
+      .date-picker {
+        height: 60px;
+        width: 100%;
+        background: $mainColor;
+        @include nemo;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 20px;
+        span {
+          color: $textSubColor;
+          font-size: 20px;
+          margin-right: 10px;
+        }
+        div {
+          cursor: pointer;
+          position: relative;
+          input {
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            user-select: none;
+            background: none;
+            outline: none;
+            border: none;
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0);
+          }
+          input[type="date"]::-webkit-calendar-picker-indicator {
+            background: blueviolet;
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            left: 0;
+          }
+          span {
+            left: 0;
+            width: 300px;
+            // position: absolute;
+            color: $textMainColor2;
+          }
+        }
+      }
+      .topic-picker {
+        height: calc(100% - 11%);
+        width: 100%;
+        background: $mainColor;
+        @include innerNemo;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .inner-box {
+      display: flex;
+
+      justify-content: space-around;
+      flex-direction: column-reverse;
+      align-items: center;
+      .info-div {
+        margin: 20px;
+        width: 90%;
+        height: 40%;
+        min-height: 40%;
+        background: $mainColor;
+        @include innerNemo;
+      }
+      .topic-div {
+        margin: 20px;
+        height: 50%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        //   border: 2px solid gray;
+        .date-picker {
+          height: 60px;
+          width: 100%;
+          background: $mainColor;
+          @include nemo;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding-left: 20px;
+          span {
+            color: $textSubColor;
+            font-size: 20px;
+            margin-right: 10px;
+          }
+          div {
+            cursor: pointer;
+            position: relative;
+            input {
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              user-select: none;
+              background: none;
+              outline: none;
+              border: none;
+              position: absolute;
+              font-size: 20px;
+              color: rgba(255, 255, 255, 0);
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+              background: blueviolet;
+              position: absolute;
+              width: 150px;
+              height: 30px;
+              left: 0;
+            }
+            span {
+              left: 0;
+              width: 300px;
+              // position: absolute;
+              color: $textMainColor2;
+            }
+          }
+        }
+        .topic-picker {
+          height: calc(100% - 18%);
+          width: 100%;
+          background: $mainColor;
+          @include innerNemo;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding-top: 15px;
+          overflow: hidden;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}

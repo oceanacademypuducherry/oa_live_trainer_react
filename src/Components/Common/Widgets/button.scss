@@ -3,6 +3,7 @@
 
 .c-btn {
   @include fitObject(50px, 350px);
+  min-height: 50px;
   border: none;
   outline: none;
   background-color: $buttonMainColor;
@@ -18,7 +19,12 @@
     background: $buttonHoverColor;
   }
   &:active {
-    transition: 0.1s;
-    transform: scale(0.95);
+    @include clickEvent;
+  }
+}
+
+@media (max-width: 550px) {
+  .c-btn {
+    @include fitObject(50px, 90%);
   }
 }

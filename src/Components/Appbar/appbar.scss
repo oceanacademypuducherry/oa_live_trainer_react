@@ -1,0 +1,63 @@
+@import "../Common/colors.scss";
+@import "../Common/effects.scss";
+
+.appbar-div {
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: $mainColor;
+  border-bottom: 3px solid $inputUnFocus;
+  @include align(flex, space-between, center, row);
+  padding: 0 20px;
+  .logo-div {
+    height: 100%;
+
+    @include align(flex, center, center, row);
+    .logo {
+      height: auto;
+      margin-right: 5px;
+      padding-top: 5px;
+      img {
+        height: 25px;
+      }
+    }
+    span {
+      font-size: 28px;
+      font-family: "Ubuntu";
+      font-weight: 600;
+    }
+  }
+  .trainer-div {
+    cursor: pointer;
+    @include fitObject(100%, auto);
+    @include align(flex, center, center, row);
+    .profilePic {
+      @include fitObject(60px, 60px);
+      border-radius: 50%;
+      border: 3px solid rgb(164, 164, 164);
+      overflow: hidden;
+      img {
+        @include fitObject;
+        object-fit: cover;
+      }
+    }
+    .info {
+      margin: 0 15px;
+      font-family: "Ubuntu";
+      .name {
+        color: $textMainColor2;
+        font-size: 22px;
+        font-weight: 600;
+      }
+      .designation {
+        font-size: 15px;
+        color: $iconAndTextColor;
+        font-weight: 400;
+      }
+    }
+    .ico {
+      font-size: 30px;
+      color: $textMainColor2;
+    }
+  }
+}

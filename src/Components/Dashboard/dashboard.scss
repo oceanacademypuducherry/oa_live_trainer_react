@@ -1,0 +1,8 @@
+@import "../Common/colors.scss";
+.dash-div {
+  width: calc(100vw - 250px);
+  background-color: $mainColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

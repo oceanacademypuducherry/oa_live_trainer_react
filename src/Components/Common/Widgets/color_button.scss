@@ -1,0 +1,34 @@
+@import "../effects.scss";
+@import "../colors.scss";
+
+.color-btn {
+  margin: 10px 20px;
+  cursor: pointer;
+  width: 85%;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    opacity: 0.3;
+    transition: 0.3s;
+  }
+
+  span {
+    position: absolute;
+    font-size: 18px;
+    color: red;
+    transition: 0.3s;
+  }
+  &:active {
+    @include clickEvent;
+  }
+}

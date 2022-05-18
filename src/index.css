@@ -5,7 +5,17 @@
   box-sizing: border-box;
   font-family: "Roboto";
 }
-
+*::-webkit-scrollbar {
+  position: relative;
+  right: 20px;
+  width: 5px;
+  background-color: rgba(255, 255, 255, 0.067);
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 169, 169, 0.144);
+  outline: none;
+}
 body {
   margin: 0;
   font-family: "Ubuntu", "Roboto", "Inter" -apple-system, BlinkMacSystemFont,

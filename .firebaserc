@@ -6,7 +6,7 @@
     "oceanlivereact": {
       "hosting": {
         "trainer": [
-          "oa-live-admin"
+          "oa-live-trainer"
         ]
       }
     }

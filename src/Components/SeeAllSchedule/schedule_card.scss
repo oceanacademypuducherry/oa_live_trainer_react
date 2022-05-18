@@ -1,0 +1,48 @@
+@import "../Common/colors.scss";
+@import "../Common/effects.scss";
+
+.s-card-div {
+  cursor: pointer;
+  height: 100px;
+  width: 370px;
+  margin: 10px;
+  border-radius: 10px;
+  background: $mainColor;
+  @include nemo;
+  padding: 8px;
+  @include align(flex, center, center, row);
+  .ico {
+    margin: 10px;
+    height: 60px;
+    width: 60px;
+    @include innerNemo;
+    @include align(flex, center, center, row);
+  }
+  .ico > * {
+    font-size: 30px;
+    color: #9cd4c3;
+  }
+  .s-info {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    .date {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .time {
+      color: $textSubColor;
+    }
+  }
+  .arrow-btn {
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: $mainColor;
+    @include nemo;
+    border-radius: 50%;
+    @include align(flex, center, center);
+    color: #8996a8;
+    font-size: 20px;
+  }
+}

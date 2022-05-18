@@ -6,6 +6,7 @@ export default function TextField({
   name,
   type,
   placeholder,
+  readOnly,
 }) {
   return (
     <div className="inp-div">
@@ -15,6 +16,7 @@ export default function TextField({
         value={value}
         onChange={onChange}
         name={name}
+        readOnly={readOnly}
       />
     </div>
   );

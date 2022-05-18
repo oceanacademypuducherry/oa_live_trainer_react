@@ -1,5 +1,9 @@
 import React from "react";
 import "./button.scss";
-export default function CustomButton({ children }) {
-  return <button className="c-btn">{children}</button>;
+export default function CustomButton({ children, onClick }) {
+  return (
+    <button className="c-btn" onClick={onClick}>
+      {children}
+    </button>
+  );
 }
