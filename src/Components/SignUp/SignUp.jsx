@@ -25,7 +25,7 @@ export default function SignUp() {
     trainerName: "",
     designation: "",
     email: "",
-    profilePicture: "",
+    profilePicture: null,
     skills: "",
   });
   function inputHandler(e) {

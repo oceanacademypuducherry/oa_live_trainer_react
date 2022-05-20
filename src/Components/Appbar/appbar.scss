@@ -28,9 +28,37 @@
     }
   }
   .trainer-div {
+    position: relative;
     cursor: pointer;
     @include fitObject(100%, auto);
     @include align(flex, center, center, row);
+    .t-profile-popup-div {
+      position: absolute;
+      height: auto;
+      background: $mainColor;
+      top: 100%;
+      right: -10px;
+
+      @include nemo;
+      // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.121) inset;
+      .p-tabs {
+        width: 200px;
+        height: 60px;
+        // @include nemo;
+        padding-left: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: $mainColor;
+        transition: 0.3s;
+        &:hover {
+          background: $inputUnFocus;
+        }
+        &:active {
+          @include clickEvent;
+        }
+      }
+    }
     .profilePic {
       @include fitObject(60px, 60px);
       border-radius: 50%;

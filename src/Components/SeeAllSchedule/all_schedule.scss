@@ -1,14 +1,36 @@
-.all-schedule-div {
-  width: 100%;
-  height: 100%;
-  overflow: none;
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 110px;
-  grid-auto-columns: 300px;
-  place-items: start center;
-  gap: 10px;
+@import "../Common/colors.scss";
+
+.all-schedule-top-bar {
+  .topbar {
+    height: 50px;
+    // background-color: yellow;
+    display: flex;
+    align-items: center;
+    select {
+      outline: none;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-left: 20px;
+      background: $mainColor;
+      option {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+  .all-schedule-div {
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 110px;
+    grid-auto-columns: 300px;
+    place-items: start center;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 1699px) {

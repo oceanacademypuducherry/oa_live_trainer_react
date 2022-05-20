@@ -15,12 +15,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+
           <Route path="/all/batch" element={<SeeAllBatch />} />
           <Route path="/all/schedule" element={<SeeAllSchedule />} />
           <Route path="/add/schedule" element={<Schedule />} />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

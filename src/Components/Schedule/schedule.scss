@@ -17,13 +17,116 @@
     justify-content: space-around;
 
     align-items: flex-end;
+    // info div
     .info-div {
+      position: relative;
       margin: 20px;
       width: 40%;
       height: 84%;
+
       background: $mainColor;
       @include innerNemo;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 10px;
+      .title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 25px 0;
+        .b-name {
+          font-size: 25px;
+          color: $textMainColor2;
+        }
+        .c-id {
+          color: $textSubColor;
+          font-size: 18px;
+        }
+      }
+      .progres-div {
+        height: 200px;
+        width: 200px;
+        min-height: 200px;
+        min-width: 200px;
+        background: conic-gradient(
+          #018bdb 0deg,
+          #018bdb 90deg,
+          $mainColor 0deg,
+          $mainColor 0deg
+        );
+        @include nemo;
+        border-radius: 50%;
+        @include align(flex, center, center, row);
+        &::after {
+          content: attr(progress-value) "%";
+          height: 90%;
+          width: 90%;
+          @include innerNemo;
+          border-radius: 50%;
+          background: $mainColor;
+          @include align(flex, center, center);
+          font-size: 25px;
+          color: $progressColor;
+          font-weight: 500;
+        }
+      }
+      .selected-topic-div {
+        width: 100%;
+        @include align(flex, center, center, column);
+        margin: 25px 0;
+
+        .class-date {
+          color: $textSubColor;
+          font-size: 18px;
+        }
+        .picked-topics {
+          overflow: hidden;
+          overflow-y: auto;
+          display: flex;
+          flex-grow: none;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+
+          padding: 10px 20px;
+          // height: 150px;
+          // max-height: 150px;
+          width: 100%;
+          max-height: 200px;
+          span {
+            color: $textMainColor2;
+            margin: 5px;
+            font-size: 20px;
+          }
+        }
+      }
+      .sc-btn {
+        cursor: pointer;
+        position: absolute;
+        bottom: 40px;
+        height: 50px;
+        width: 80%;
+        background: #0175e162;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        span {
+          color: #0175e1;
+          font-size: 22px;
+          font-weight: 500;
+        }
+        &:active {
+          @include clickEvent;
+        }
+      }
     }
+
+    // topic div
     .topic-div {
       margin: 20px;
       height: 95%;
@@ -107,6 +210,20 @@
         min-height: 40%;
         background: $mainColor;
         @include innerNemo;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px 10;
+        .progres-div {
+          margin: 6px;
+          height: 150px;
+          width: 150px;
+          min-width: 150px;
+          min-height: 150px;
+        }
+        .sc-btn {
+          bottom: 10px;
+        }
       }
       .topic-div {
         margin: 20px;
@@ -121,6 +238,7 @@
           width: 100%;
           background: $mainColor;
           @include nemo;
+
           display: flex;
           align-items: center;
           justify-content: flex-start;
@@ -166,6 +284,7 @@
           width: 100%;
           background: $mainColor;
           @include innerNemo;
+          //   border: 5px solid rgb(225, 225, 225);
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;

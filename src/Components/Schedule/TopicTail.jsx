@@ -1,7 +1,7 @@
 import React from "react";
 import "./topic_tail.scss";
 
-export default function TopicTail({ isActive, isCompleted, onClick }) {
+export default function TopicTail({ isActive, isCompleted, onClick, topic }) {
   return (
     <div
       className={`tp-div ${isCompleted && "tp-completed"}`}
@@ -13,7 +13,7 @@ export default function TopicTail({ isActive, isCompleted, onClick }) {
         >
           <div className="c-i"></div>
         </div>
-        <span>Introduction to Dart</span>
+        <span>{topic}</span>
       </div>
       {isCompleted && (
         <div className="resedule-btn" onClick={onClick}>
