@@ -5,7 +5,9 @@
   height: 100vh;
   min-height: 800px;
   width: 100vw;
+  min-width: 100vw;
   background-color: $mainColor;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }

@@ -77,6 +77,7 @@ export default function SeeAllSchedule() {
               key={index}
               dateInfo={dateObject}
               isCompleted={schedule.isCompleted}
+              zoomLink={schedule.zoomLink}
             />
           ) : (
             <></>

@@ -2,6 +2,7 @@
 @import "../Common/effects.scss";
 
 .s-card-div {
+  user-select: none;
   cursor: pointer;
   height: 100px;
   width: 370px;
@@ -11,6 +12,9 @@
   @include nemo;
   padding: 8px;
   @include align(flex, center, center, row);
+  &:active {
+    @include clickEvent;
+  }
   .ico {
     margin: 10px;
     height: 60px;
