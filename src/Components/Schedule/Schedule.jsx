@@ -43,30 +43,40 @@ export default function Schedule() {
   }
 
   function addSchedule() {
-    let bodyData = {
-      batchId: batch._id,
-      courseId: batch.courseId,
-      trainer: batch.trainer,
-      zoomLink: "https://zoom.us/",
-      topicIndex: shcheduleData.pickedTopicIndex,
-      topic: `${shcheduleData.pickedTopic}`,
-      isJoin: false,
-      batchType: batch.batchType,
-      batchTime: batch.batchTime,
-      recordedVideo: "",
-      classDate: shcheduleData.classDate,
-      users: batch.users,
-      token: localStorage.getItem("t_token"),
-    };
     axios
-      .post("/schedule/add/", bodyData)
+      .post("/zoom/meeting", {
+        email: "oceanacademypuducherry@gmail.com",
+      })
       .then((res) => {
-        console.log(res.data);
-        navigate("/");
+        console.log(res.data.join_url);
+        let bodyData = {
+          batchId: batch._id,
+          courseId: batch.courseId,
+          trainer: batch.trainer,
+          zoomLink: res.data.join_url,
+          topicIndex: shcheduleData.pickedTopicIndex,
+          topic: `${shcheduleData.pickedTopic}`,
+          isJoin: false,
+          batchType: batch.batchType,
+          batchTime: batch.batchTime,
+          recordedVideo: "",
+          classDate: shcheduleData.classDate,
+          users: batch.users,
+          token: localStorage.getItem("t_token"),
+        };
+        axios
+          .post("/schedule/add/", bodyData)
+          .then((res) => {
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+            alert(error.message);
+          });
       })
       .catch((error) => {
         console.log(error);
-        alert(error.message);
+        console.log("zoom link error");
       });
   }
   return (

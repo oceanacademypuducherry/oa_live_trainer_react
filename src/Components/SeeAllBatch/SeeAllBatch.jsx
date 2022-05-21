@@ -10,7 +10,6 @@ export default function SeeAllBatch() {
     axios
       .post("schedule/batch", { token: localStorage.getItem("t_token") })
       .then((res) => {
-        console.log(res.data);
         setAllBatch(res.data);
       })
       .catch((error) => {

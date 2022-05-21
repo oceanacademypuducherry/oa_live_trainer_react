@@ -19,7 +19,6 @@ export default function Login() {
     axios
       .post("trainer/login", { mobileNumber: mobileNumber })
       .then((res) => {
-        console.log(res.data);
         localStorage.setItem("t_token", res.data.token);
         navigate("/");
       })

@@ -34,7 +34,6 @@ export default function SeeAllSchedule() {
     axios
       .post("schedule/all", { token: localStorage.getItem("t_token") })
       .then((res) => {
-        console.log(res.data.courseIds);
         setAllBatches(res.data.courseIds);
         setSelectedBatch(res.data.courseIds[0]);
         setAllSchedule(res.data.schedules);
