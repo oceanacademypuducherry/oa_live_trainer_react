@@ -43,17 +43,26 @@ export default function Schedule() {
   }
 
   function addSchedule() {
+    console.log(batch);
+    let meetingIdPattan = /([\d]{9,12})/g;
+    let meetingPaswordPattan = /([\w]+)$/g;
     axios
       .post("/zoom/meeting", {
         email: "oceanacademypuducherry@gmail.com",
       })
       .then((res) => {
         console.log(res.data.join_url);
+        let meetingId = res.data.join_url.match(meetingIdPattan)[0];
+        let meetingPas = res.data.join_url.match(meetingPaswordPattan)[0];
+        console.log(meetingId);
+        console.log(meetingPas);
+
+        let url = `https://brindakarthik.github.io/zoom/?meetingNumber=${meetingId}&username=OceanAcademy&password=${meetingPas}`;
         let bodyData = {
           batchId: batch._id,
           courseId: batch.courseId,
           trainer: batch.trainer,
-          zoomLink: res.data.join_url,
+          zoomLink: url,
           topicIndex: shcheduleData.pickedTopicIndex,
           topic: `${shcheduleData.pickedTopic}`,
           isJoin: false,

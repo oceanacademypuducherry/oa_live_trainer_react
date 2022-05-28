@@ -8,6 +8,7 @@ import Home from "./Components/Home/Home";
 import SeeAllBatch from "./Components/SeeAllBatch/SeeAllBatch";
 import SeeAllSchedule from "./Components/SeeAllSchedule/SeeAllSchedule";
 import Schedule from "./Components/Schedule/Schedule";
+import ZoomPage from "./Components/ClassRoom/ZoomPage";
 
 function App() {
   return (
@@ -18,9 +19,11 @@ function App() {
 
           <Route path="/all/batch" element={<SeeAllBatch />} />
           <Route path="/all/schedule" element={<SeeAllSchedule />} />
+
           <Route path="/add/schedule" element={<Schedule />} />
           <Route path="/task" element={<Dashboard />} />
         </Route>
+        <Route path="/all/schedule/zoom" element={<ZoomPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>

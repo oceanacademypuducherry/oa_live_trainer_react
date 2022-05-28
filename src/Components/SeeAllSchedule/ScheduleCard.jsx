@@ -2,6 +2,7 @@ import React from "react";
 import "./schedule_card.scss";
 import { BsFillCalendarCheckFill } from "react-icons/bs";
 import { FaChevronRight, FaVideo, FaVideoSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function ScheduleCard({
   dateInfo,
@@ -9,6 +10,7 @@ export default function ScheduleCard({
   onClick,
   zoomLink,
 }) {
+  const navigator = useNavigate();
   return (
     <div
       className={`s-card-div ${isCompleted && "s-card-div-done"} `}
@@ -25,9 +27,17 @@ export default function ScheduleCard({
       </div>
       <div
         className="arrow-btn"
-        onClick={() => {
-          window.open(zoomLink);
-        }}
+        onClick={
+          !isCompleted
+            ? () => {
+                navigator("/all/schedule/zoom", {
+                  state: { zoomLink: zoomLink },
+                });
+
+                // window.open(zoomLink);
+              }
+            : null
+        }
       >
         {isCompleted ? <FaChevronRight /> : <FaVideo />}
       </div>

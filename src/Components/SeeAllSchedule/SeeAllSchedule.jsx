@@ -48,19 +48,22 @@ export default function SeeAllSchedule() {
   return (
     <div className="all-schedule-top-bar">
       <div className="topbar">
-        <select
-          onChange={(e) => {
-            setSelectedBatch(e.target.value);
-          }}
-        >
-          {allBatches.map((item, key) => {
-            return (
-              <option value={item} key={key}>
-                {item}
-              </option>
-            );
-          })}
-        </select>
+        {allBatches.length !== 0 && (
+          <select
+            onChange={(e) => {
+              setSelectedBatch(e.target.value);
+            }}
+          >
+            {allBatches.length &&
+              allBatches.map((item, key) => {
+                return (
+                  <option value={item} key={key}>
+                    {item}
+                  </option>
+                );
+              })}
+          </select>
+        )}
       </div>
       <div className="all-schedule-div">
         {allSchedule.map((schedule, index) => {

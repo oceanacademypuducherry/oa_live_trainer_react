@@ -23,6 +23,7 @@ export default function Login() {
         navigate("/");
       })
       .catch((error) => {
+        console.log(error);
         if (error.response.data.message === "user not found") {
           navigate("/signup", { state: { mobileNumber: mobileNumber } });
         }
