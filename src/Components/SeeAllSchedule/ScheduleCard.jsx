@@ -30,11 +30,15 @@ export default function ScheduleCard({
         onClick={
           !isCompleted
             ? () => {
-                navigator("/all/schedule/zoom", {
-                  state: { zoomLink: zoomLink },
-                });
-
-                // window.open(zoomLink);
+                let hostZoom =
+                  zoomLink.replace(/role=\d/g, "role=1") +
+                  localStorage.getItem("trainerName");
+                console.log(hostZoom);
+                // navigator("/all/schedule/zoom", {
+                //   state: { zoomLink: hostZoom },
+                // });
+                console.log(hostZoom);
+                window.open(hostZoom);
               }
             : null
         }

@@ -10,7 +10,7 @@ const PROFILE_PIC =
 export default function Appbar({ trainerInfo }) {
   const [isPop, setIsPop] = useState(false);
   const navigate = useNavigate();
-
+  localStorage.setItem("trainerName", trainerInfo.trainerName);
   return (
     <div className="appbar-div">
       <div className="logo-div">

@@ -51,13 +51,14 @@ export default function Schedule() {
         email: "oceanacademypuducherry@gmail.com",
       })
       .then((res) => {
-        console.log(res.data.join_url);
-        let meetingId = res.data.join_url.match(meetingIdPattan)[0];
-        let meetingPas = res.data.join_url.match(meetingPaswordPattan)[0];
-        console.log(meetingId);
-        console.log(meetingPas);
+        // console.log(res.data.join_url);
+        // let meetingId = res.data.join_url.match(meetingIdPattan)[0];
+        // let meetingPas = res.data.join_url.match(meetingPaswordPattan)[0];
+        // console.log(meetingId);
+        // console.log(meetingPas);
 
-        let url = `https://brindakarthik.github.io/zoom/?meetingNumber=${meetingId}&username=OceanAcademy&password=${meetingPas}`;
+        // let url = `https://brindakarthik.github.io/zoom/?meetingNumber=${meetingId}&username=OceanAcademy&password=${meetingPas}`;
+        let url = res.data.join_url;
         let bodyData = {
           batchId: batch._id,
           courseId: batch.courseId,
